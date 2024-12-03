@@ -5,15 +5,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: UsePythonVersion@1
-  inputs:
-    versionSpec: '3.x'
-    addToPath: true
-
 - script: |
     echo "<html><body>Hello</body></html>" > index.html
     echo "<footer><p style='position:fixed; bottom:0; right:0;'>$(date)</p></footer>" >> index.html
-  displayName: 'HTML fájlom'
+  displayName: 'HTML fájl generálása dátummal'
 
 - task: PublishBuildArtifacts@1
   inputs:
